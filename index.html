@@ -1,195 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-<title>Nexus 6P: strange and sudden power loss</title>
-<!-- 2017-11-19 Sun 10:28 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="Gary Gu" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  /*]]>*/-->
-</style>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
-</head>
-<body>
-<div id="content">
-<h1 class="title">Nexus 6P: strange and sudden power loss</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1. Introduction</a></li>
-<li><a href="#sec-2">2. 17Nov: The battery was supposed to last another 10 hours :(</a></li>
-<li><a href="#sec-3">3. 19Nov: 35% battery left. Start the camera app, Boom!!</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-A week ago, I was video-taping my son participating in a rowing competition on the Mercer lake when suddenly my Nexus 6P decided to shutdown. 
-I was pretty sure the phone had at least 40% of battery power left when that happened. 
-And pressing the power button failed to reboot the phone. Later at home I googled around and folks were saying the only way to reboot the 
-phone is to have the charger plugged in. Indeed that worked. Yesterday, the strange thing happened again. This time I was at home video-taping
-one of my kids unboxing the Pixel 2 that was just delivered. And my Nexus 6P suddenly froze and I realized right then that the power loss 
-must have been happening again. I quickly killed
-the camera app and took a snapshot of the power status to make sure I wasn't daydreaming.
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> 17Nov: The battery was supposed to last another 10 hours :(</h2>
-<div class="outline-text-2" id="text-2">
-
-<div class="figure">
-<p><img src="./img/Screenshot_20171117-143556.png" alt="Screenshot_20171117-143556.png" width="500px" />
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> 19Nov: 35% battery left. Start the camera app, Boom!!</h2>
-<div class="outline-text-2" id="text-3">
-
-<div class="figure">
-<p><img src="./img/Screenshot_20171119-8_09_06AM.png" alt="Screenshot_20171119-8_09_06AM.png" width="500px" />
-</p>
-</div>
-</div>
-</div>
-</div>
-<div id="postamble" class="status">
-<p class="author">Author: Gary Gu</p>
-<p class="date">Created: 2017-11-19 Sun 10:28</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
-</div>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- <link rel="icon" type="image/png" href="favicon.png" /> -->
+    <link rel="icon" type="image/x-ico" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>gug</title>
+  </head>
+  <style type="text/css">
+    .books{
+    font-family:Arial;
+    font-size:10pt;
+    }
+    .para{
+    font-family: "LiSu", "隶书", cursive;
+    }
+  </style>
+  <body>
+    <div id="root">
+      <h1>外国人为啥不来中国了？</h1>
+      <h2>长岛风 2024年03月14日</h2>
+      <p>
+党中央最近很窝火，老百姓不生孩子，母猪不下崽，韭菜不出苗，以后还怎么割韭菜？更让中央窝火的是，外国人也不来中国了。春节北京的庙会，几十万人，好不热闹，但竟然只有一对金发老外，一打听还是俩大鹅，是比咱月收入不足2000的九亿中国人还穷的大鹅，内需内需，靠几个庙会灯会里国人的消费是刺激不起来朝廷需要的“内需”的？五一淄博烧烤，炒的全国都沸腾，但事后一算细账，人均消费58元，哈哈哈，差点笑破我的肚子。2023年，美国平均人均消费4万美元，中国呢？4000人民币，连人家零头的零头都不到，有些人还整天跟美国较劲，真有点那个叫不自量力。。。
+      </p>
+      <p>
+	其实人人都知道，美国和几个西方发达国家才是地球上的消费动力。别怪我说话不好听，人家那叫生活，咱们那叫生存，不在一个起跑线上，还要弯道超车，笑死我。。中国为啥最近十几年“撅起”了？什么党的领导，什么勤劳智慧，什么改革开放政策，其实都不是！关键的关键就是世贸组织接纳中国后，西方的市场对中国开放。大家想想：一双在中国卖2毛钱的袜子，卖到美国就是5美元，能不撅起吗？换 成北朝鲜莫桑比克乌拉圭也照样撅起。不服就看越南，最近几年经济二位数发展，各类订单多的都应接不暇，一个造鞋的工厂，年初一次性招收3000名工人。。。
+      </p>
+      <p>
+      越南人说实话：我们要成为美国那样的国家。虽然越南体制上更像中国，中国明年就要超越美国（2025年全面超越美国），但为啥越南人不说要成为中国那样的国家呢？嘿嘿。。
+      </p>
+      <p>
+	西方洋人舍得花钱，价值观是一个方面，但关键还是有钱可花。武汉病毒这几年美国的老败灯补贴了不少钱，加拿大的小土豆也出手大方，德国的，法国的，日本的。。哪个正经大国不关心爱护自己的老百姓？中国呢？中国号称世界第二经济体，有钱向非洲抛洒，有钱造军舰导弹，就是不给中国老百姓！别说不给补贴，就花在国民身上的医疗费用在全世界200个国家里都是倒数。当然中国的人均消费低，银行里有个十万八万的也要应个急啥的，党中央整天号召老百姓花钱，病了住院你免费啊？
+      </p>
+      <p>
+	西方洋人不来中国，中国的旅游收入就减少，财政的收入就少了一大块！真把中央急死了！给欧洲免签证，抛出媚眼，各种诱惑，可还是没人来。为啥？你也不想想，外国人来了，钱怎么花？先进的信用卡是西方最最普遍的付款方式，即安全又方便，还可以长期赊账。就算不小心让人偷了也不要紧，一个电话就可以取消，再补一个就是。如此便捷的东西，中国偏偏不用。据说奥运会期间试行过几个月，很快因为国民素质太差而叫停。停就停吧，几千年现金交易也过来了，非要搞了个支付宝和微信付款，还自诩“新四大发明”，其实毛病问题很多很多，让人骗了是无法找回来的，反正手机没电了啥也不是。这玩意毕竟不是信用卡，还必须与银行账户挂钩，外国人到中国玩几天，还TMD的要去银行开账户？还要实名验证？银行开账户还得外文，系统也不接受。。。
+      </p>
+      <p>你让人家的钱怎么花？
+      </p>
+      <p>住宿也是一个大困难，外国人不能随便住普通人家，要去警察局登记。。外国人来中国几天，还得到处找警察局？住旅馆也分三六九等，有些便宜点的还不接待洋人，扯鸡巴蛋的！长岛我去过世界上几十个国家，还没发现哪个国家住宿需要去警察局登记，回到自己的祖国，回到老爹老妈的家，反而要注册登记，也真是今古奇观。还要来不来抓间谍，真间谍能让你抓着？大大的良民倒是不少被送进监狱。最近澳洲一哥们不是因为间谍罪被判死缓,听说平时还伪装成5毛，一个5毛马甲的爱国贼被抓，左右两边都高兴，这是在留园极少极少能看到的情景。
+      </p>
+      <p>
+	其实这些都不是主要的，外国人不肯来中国的主要原因还是前些年那个“脱钩”。这些年的一些事证明，特别是经过武汉病毒，世界对中国有了一个新认识，也可以说认识的更加深刻了。当年克林顿使出吃奶的力气把中国拉入世贸，结果呢？不仅中国没有兑现承诺，西方国家就等于集体上当受骗！西方的左派们希望的能用钱把中国“买”到文明世界来的企图是彻底破产了，尤其是希望中国担任“世界工场”的想法真是太幼稚了。西方国家每年上万亿美元的外汇逆差不仅没有把中国“买”进文明，反而勾起了弯道超车，影响世界，甚至要领跑世界的野心，就差一句杨子荣咏叹调唱的“愿红旗五洲四海齐招展，哪怕是火海刀山也要冲上前”。如今为什么各国在中国问题上步调一致，这就是答案。西方文化的特点是含蓄，但到了提出“脱钩”这个份上已经算是很直白了，西方人不打嘴炮，说一句算一句，剩下的就是真干！
+      </p>
+      <p>
+	三年的武汉病毒，中国的表现也给西方世界上了一课。当中国武汉爆发肺炎而封锁全国各地城市之间交通时，对西方却是故意的“网开一面”。记得当时就有报道，一个中国女人，一路发烧咳嗽着到意大利旅游，罗马、米兰，佛罗伦萨。。。西方人的宽容，不等于心里就不那么别扭，只是嘴上不说而已。有一个阶段，美国急需呼吸机，中国制造厂家也是开出来的是惊人的天价，敲诈勒索，干尽了坏事！就这样还口口声声要与美国做朋友，你让人家怎么相信你？让人家怎么相信司马夹头金灿灿留园的粉红之流反美仇美的言论与中国政府没有关系？
+      </p>
+      <p>
+	仅仅是反美也就罢了，美国人的称霸让你没有任何机会。但地球上别的国家呢？自己瞪大眼睛看看，英国首相感染病毒30万点赞，日本地震数以千万的幸灾乐祸，从周围的印度、韩国、台湾、菲律宾到万里之外的德国、法国、以色列、立陶宛、爱沙尼亚还有谁没被骂的狗血喷头？连一个踢球的阿根廷梅西，也莫名其妙挨了骂，不就是没给香港特首脸面吗？不就是去日本踢了一场球吗？
+      </p>
+      <p>
+	如此一个充满仇恨的国家，你还让人家怎么来？
+      </p>
+    </div>
+  </body>
 </html>
